@@ -13,7 +13,7 @@ body, html {
     height: 100vh; /* Высота на весь экран */
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    background-color: #333333;
+    background-color: #fdfdfd;
     color: #333333;
     background-image: url('background.webp');
     line-height: 1.6;
@@ -49,7 +49,7 @@ body, html {
 
 .header h1 {
     font-size: 2.5em;
-    color: #102a43;
+    color: #ffffff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Slight shadow for the text */
 }
 
@@ -57,7 +57,7 @@ body, html {
 /* Buttons */
 .btn {
     display: inline-block;
-    background: #1f4287;
+    background: #333333;
     color: #fff;
     padding: 10px 20px;
     margin: 5px 5px 5px 0;
@@ -68,7 +68,7 @@ body, html {
 }
 
 .btn:hover {
-    background: #276FBF;
+    background: #212121;
 }
 
 /* Container */
@@ -83,7 +83,7 @@ body, html {
 
 .container h2 {
     margin-bottom: 20px;
-    color: #102a43;
+    color: #333333;
 }
 
 input[type="text"],
@@ -101,12 +101,12 @@ input[type="submit"] {
     border: none;
     border-radius: 5px;
     color: #fff;
-    background-color: #1f4287;
+    background-color: #333333;
     cursor: pointer;
 }
 
 input[type="submit"]:hover {
-    background-color: #276FBF;
+    background-color: #333333;
 }
 
 /* Responsive */
