@@ -1,0 +1,123 @@
+/* General Resets */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Распределение содержимого по краям контейнера */
+    align-items: center; /* Центрирование содержимого по горизонтали */
+    height: 100vh; /* Высота на весь экран */
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #333333;
+    color: #333333;
+    background-image: url('background.webp');
+    line-height: 1.6;
+    padding: 0; /* Изменено с 20px на 0, чтобы `body` точно центрировал `.form-container` */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    min-height: 100vh; /* Изменено с 100% на 100vh для корректной работы на всю высоту вьюпорта */
+    background-attachment: fixed;
+}
+
+.header {
+    align-self: flex-start; /* Выравнивание заголовка в начало flex контейнера */
+    width: 100%; /* Ширина на весь экран */
+    padding: 20px 0; /* Отступ сверху и снизу */
+    /* Остальные свойства остаются без изменений */
+}
+
+.form-container {
+    width: 100%; /* Ширина на весь экран */
+    max-width: 400px; /* Максимальная ширина для формы */
+    margin-bottom: 50%; /* Отступ снизу */
+    /* Убрать свойство height: 100%; чтобы форма не растягивалась */
+}
+
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    color: #102a43;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Slight shadow for the text */
+}
+
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background: #1f4287;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 5px 5px 5px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #276FBF;
+}
+
+/* Container */
+.container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.container h2 {
+    margin-bottom: 20px;
+    color: #102a43;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #1f4287;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #276FBF;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: calc(100% - 10px);
+    }
+}

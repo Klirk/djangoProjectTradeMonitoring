@@ -1,5 +1,5 @@
 """
-URL configuration for djangoProjectTrade project.
+URL configuration for teleBotMaker project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -16,7 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from tradeboard.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('lending/', lending_view, name="lending"),
+    path('login/', login_view, name="login"),
+    path('registration/', registration_view, name="registration"),
+    path('', first_page, name="first-page"),
+    path('dashboard/', dashboard_view, name="dashboard"),
+    path('logout/', logout_view, name="logout"),
 ]

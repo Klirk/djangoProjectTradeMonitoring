@@ -1,0 +1,12 @@
+.error-message {
+    background-color: #FFC7C7;
+    border: 1px solid #FF5E5E;
+    border-radius: 5px;
+    color: #D43F00;
+    padding: 10px 15px;
+    text-align: center;
+    position: fixed;
+    top: 10%; /* или другое значение, чтобы подогнать под вашу навигационную панель */
+    right: 2%;
+    z-index: 1000; /* убедитесь, что сообщение об ошибке находится выше других элементов */
+}

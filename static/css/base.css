@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #F0F2F5; /* Светлый фон для контраста с меню */
+}
+
+.menu {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    background-color: #004040; /* Яркий синий, привлекающий внимание */
+    color: white;
+    padding: 10px;
+}
+
+.menu ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    align-items: stretch;
+}
+
+.menu li {
+    display: flex;
+    align-items: center;
+}
+
+.menu li a {
+    color: white;
+    padding: 10px 20px; /* Немного больше отступ для визуального комфорта */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    transition: background-color 0.3s ease; /* Плавный переход для фона */
+}
+
+.menu li a:hover {
+    background-color: #006a6a; /* Темно-синий при наведении */
+}
+
+.logo, .user-info {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.center-menu {
+    flex-grow: 1;
+    display: flex;
+    align-items: stretch;
+}
+
+.center-menu ul {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: stretch;
+}

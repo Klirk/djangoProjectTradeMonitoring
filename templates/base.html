@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Default Title{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+</head>
+<body>
+     <nav class="menu">
+        <div class="logo">
+            <!-- Пример логотипа -->
+            <img src="{% static 'icon.png' %}" alt="Logo" style="height: 50px;">
+        </div>
+        <div class="center-menu">
+            <!-- Центральные кнопки меню -->
+            <ul>
+                <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                <!-- Другие ссылки -->
+            </ul>
+        </div>
+        <div class="user-info">
+            <!-- Информация пользователя и аватар -->
+            <img src="{{ avatar }}" alt="User Avatar" class="avatar">
+            <span>{{ username }}</span>
+        </div>
+    </nav>
+
+
+    {% block content %}
+    {% endblock %}
+
+    <!-- Сюда можно добавить общий footer, если он у вас есть -->
+</body>
+</html>

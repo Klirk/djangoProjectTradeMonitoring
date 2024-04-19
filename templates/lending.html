@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Bot Constructor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'lending.css' %}">
+    <link rel="stylesheet" href="{% static 'loading.css' %}">
+    <link rel="stylesheet" href="{% static 'error.css' %}">
+</head>
+<body>
+
+<div class="header">
+    <h1>Market Manager</h1>
+</div>
+
+<div class="form-container">
+    <!-- Login Container -->
+    <div id="loginContainer" class="container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            {% csrf_token %}
+            <input type="text" placeholder="Username" name="username" required>
+            <input type="password" placeholder="Password" name="password" required>
+            <div style="display: flex;align-items: center;justify-content: space-between;">
+                <button type="submit" class="btn">Login</button>
+                <div id="showRegisterBtn" style="cursor: pointer; text-decoration: underline; margin-top: 20px;">
+                    Registration
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Registration Container -->
+    <div id="registerContainer" class="container" style="display:none;">
+
+        <h2>Registration</h2>
+        <form id="registerForm">
+            {% csrf_token %}
+            <input type="text" placeholder="Username" name="username" required>
+            <input type="password" id="password" placeholder="Password" name="password" required>
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+            <div style="display: flex;align-items: center;justify-content: space-between;">
+                <button type="submit" class="btn">Register</button>
+                <div id="showLoginBtn" style="cursor: pointer; text-decoration: underline; margin-top: 20px;">Login
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+<div id="loadingOverlay" class="loading-overlay"></div>
+<div id="loadingIndicator" class="loading-indicator">
+    <div class="spinner"></div>
+
+</div>
+<script src="{% static 'lending.js' %}"></script>
+<script src="{% static 'loading.js' %}"></script>
+<script src="{% static 'error.js' %}"></script>
+</body>
+</html>
