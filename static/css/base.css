@@ -8,10 +8,11 @@ body {
     display: flex;
     align-items: stretch;
     justify-content: space-between;
-    background-color: #004040; /* Яркий синий, привлекающий внимание */
+    background-color: #004040;
     color: white;
-    padding: 10px;
+    padding: 10px 0;  /* Убедитесь, что этот padding соответствует padding в .user-info */
 }
+
 
 .menu ul {
     display: flex;
@@ -63,4 +64,39 @@ body {
     justify-content: center;
     width: 100%;
     align-items: stretch;
+}
+
+.user-info {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding-right: 10px;  /* Убедитесь, что padding справа соответствует padding в .menu для выравнивания */
+    padding-left: 10px;   /* Аналогично проверьте padding слева */
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: calc(100% + 10px);  /* Начинается непосредственно под user-info */
+    left: -10px;  /* Корректировка на padding, если padding у user-info 10px */
+    width: auto;
+    overflow-x: hidden;
+}
+
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
 }

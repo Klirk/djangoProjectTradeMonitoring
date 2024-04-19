@@ -7,29 +7,35 @@
     <link rel="stylesheet" href="{% static 'base.css' %}">
 </head>
 <body>
-     <nav class="menu">
-        <div class="logo">
-            <!-- Пример логотипа -->
-            <img src="{% static 'icon.png' %}" alt="Logo" style="height: 50px;">
+<nav class="menu">
+    <div class="logo">
+        <!-- Пример логотипа -->
+        <img src="{% static 'icon.png' %}" alt="Logo" style="height: 50px;">
+    </div>
+    <div class="center-menu">
+        <!-- Центральные кнопки меню -->
+        <ul>
+            <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+            <!-- Другие ссылки -->
+        </ul>
+    </div>
+    <div class="user-info" onclick="toggleDropdown()">
+        <img src="{{ avatar }}" alt="User Avatar" class="avatar">
+        <span>{{ username }}</span>
+        <div id="userDropdown" class="dropdown-content" style="display:none;">
+            <a href="">Профиль</a>
+            <a href="">Настройки</a>
+            <a href="{% url 'logout' %}">Выйти</a>
         </div>
-        <div class="center-menu">
-            <!-- Центральные кнопки меню -->
-            <ul>
-                <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
-                <!-- Другие ссылки -->
-            </ul>
-        </div>
-        <div class="user-info">
-            <!-- Информация пользователя и аватар -->
-            <img src="{{ avatar }}" alt="User Avatar" class="avatar">
-            <span>{{ username }}</span>
-        </div>
-    </nav>
+    </div>
+
+</nav>
 
 
-    {% block content %}
-    {% endblock %}
+{% block content %}
+{% endblock %}
+<script src="{% static 'base.js' %}"></script>
 
-    <!-- Сюда можно добавить общий footer, если он у вас есть -->
+<!-- Сюда можно добавить общий footer, если он у вас есть -->
 </body>
 </html>
