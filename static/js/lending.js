@@ -10,8 +10,8 @@ document.getElementById('showRegisterBtn').addEventListener('click', function ()
 
 document.getElementById('registerForm').addEventListener('submit', function (event) {
     event.preventDefault();
-    if (!this.checkValidity()) {
-        displayErrorMessage('Please check your input and try again.');
+    if (!this.checkValidity() || (document.getElementById('password').value !== document.getElementById('confirmPassword').value)) {
+        displayErrorMessage('Please check your input and try again. Ensure that the passwords match.');
         return;
     }
     showLoadingIndicator();
@@ -35,7 +35,6 @@ document.getElementById('registerForm').addEventListener('submit', function (eve
         displayErrorMessage('Error: ' + error);
     });
 });
-
 document.getElementById('loginForm').addEventListener('submit', function (event) {
     event.preventDefault();
     if (!this.checkValidity()) {

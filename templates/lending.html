@@ -20,7 +20,7 @@
         <h2>Login</h2>
         <form id="loginForm">
             {% csrf_token %}
-            <input type="text" placeholder="Username" name="username" pattern="[A-Za-z0-9]{6,16}"
+            <input type="text" placeholder="Username" name="username" pattern="[A-Za-z0-9]{5,16}"
                    title="Username must be 6-16 characters long and contain only letters and numbers." required>
             <input type="password" placeholder="Password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                    title="Password must contain at least 8 characters, including at least one number, one uppercase and one lowercase letter."
@@ -38,7 +38,7 @@
         <h2>Registration</h2>
         <form id="registerForm">
             {% csrf_token %}
-            <input type="text" id="username" placeholder="Username" name="username" pattern="[A-Za-z0-9]{6,16}"
+            <input type="text" id="username" placeholder="Username" name="username" pattern="[A-Za-z0-9]{5,16}"
                    required>
             <input type="password" id="password" placeholder="Password" name="password"
                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>

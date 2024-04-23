@@ -42,6 +42,7 @@ def dashboard_view(request):
 def settings_view(request):
     return render(request, "settings.html")
 
+
 @login_required
 def profile_view(request):
     return render(request, "profile.html")
@@ -73,13 +74,22 @@ def login_view(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
 
+        # Проверка на существование пользователя в базе данных
+        msg = databaseApi.check_user(username)
+        if msg is not None:
+            return JsonResponse({'answer': msg, 'url': ''})
+
+        # Проверка пароля, если пользователь найден
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
             log_user_action(username, "User logged in")
             return JsonResponse({'answer': 'Login success', 'url': '/dashboard/'})
         else:
-            return JsonResponse({'answer': 'User not found', 'url': ''})
+            return JsonResponse({'answer': 'Invalid password. Try again.', 'url': ''})
+
+    # Если запрос не POST, вернуть ошибку или перенаправить
+    return JsonResponse({'answer': 'Invalid request', 'url': ''})
 
 
 def logout_view(request):

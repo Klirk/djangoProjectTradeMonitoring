@@ -14,3 +14,10 @@ class APIWrapperDB:
                 username=username), "Пользователь успешно создан"  # Возвращаем флаг успеха и сообщение
         except IntegrityError:
             return False, "Уже есть пользователь с таким username"  # Возвращаем флаг неудачи и сообщение
+
+    @staticmethod
+    def check_user(username):
+        try:
+            User.objects.get(username=username)
+        except User.DoesNotExist:
+            return 'No such user. Please register first.'
