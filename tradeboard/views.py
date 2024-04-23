@@ -48,9 +48,6 @@ def profile_view(request):
     return render(request, "profile.html")
 
 
-def log_user_action(user, action):
-    logger.info('User action occurred', extra={'user': user, 'action': action})
-
 
 def registration_view(request):
     if request.method == 'POST':
@@ -59,13 +56,11 @@ def registration_view(request):
 
         user = authenticate(username=username, password=password)
         if user is not None:
-            log_user_action(request.user.username, "Login already exists")
             return JsonResponse({'answer': 'Login already exist', 'url': ''})
         else:
             # Your user creation logic here
             user = databaseApi.add_user(username, password)
             login(request, user[0])
-            log_user_action(username, "User registered")
             return JsonResponse({'answer': 'Registration complete', 'url': '/dashboard/'})
 
 
@@ -83,7 +78,6 @@ def login_view(request):
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
-            log_user_action(username, "User logged in")
             return JsonResponse({'answer': 'Login success', 'url': '/dashboard/'})
         else:
             return JsonResponse({'answer': 'Invalid password. Try again.', 'url': ''})
