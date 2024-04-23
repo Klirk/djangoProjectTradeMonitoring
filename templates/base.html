@@ -16,6 +16,7 @@
         <!-- Центральные кнопки меню -->
         <ul>
             <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+{#            <li><div>Dashboard</div></li>#}
             <!-- Другие ссылки -->
         </ul>
     </div>
@@ -23,8 +24,8 @@
         <img src="{{ avatar }}" alt="User Avatar" class="avatar">
         <span>{{ username }}</span>
         <div id="userDropdown" class="dropdown-content" style="display:none;">
-            <a href="">Профиль</a>
-            <a href="">Настройки</a>
+            <a href="{% url 'profile' %}">Профиль</a>
+            <a href="{% url 'settings' %}">Настройки</a>
             <a href="{% url 'logout' %}">Выйти</a>
         </div>
     </div>

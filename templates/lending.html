@@ -11,19 +11,20 @@
     <link rel="stylesheet" href="{% static 'error.css' %}">
 </head>
 <body>
-
 <div class="header">
     <h1>Market Manager</h1>
 </div>
-
 <div class="form-container">
     <!-- Login Container -->
     <div id="loginContainer" class="container">
         <h2>Login</h2>
         <form id="loginForm">
             {% csrf_token %}
-            <input type="text" placeholder="Username" name="username" required>
-            <input type="password" placeholder="Password" name="password" required>
+            <input type="text" placeholder="Username" name="username" pattern="[A-Za-z0-9]{6,16}"
+                   title="Username must be 6-16 characters long and contain only letters and numbers." required>
+            <input type="password" placeholder="Password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                   title="Password must contain at least 8 characters, including at least one number, one uppercase and one lowercase letter."
+                   required>
             <div style="display: flex;align-items: center;justify-content: space-between;">
                 <button type="submit" class="btn">Login</button>
                 <div id="showRegisterBtn" style="cursor: pointer; text-decoration: underline; margin-top: 20px;">
@@ -32,15 +33,15 @@
             </div>
         </form>
     </div>
-
     <!-- Registration Container -->
     <div id="registerContainer" class="container" style="display:none;">
-
         <h2>Registration</h2>
         <form id="registerForm">
             {% csrf_token %}
-            <input type="text" placeholder="Username" name="username" required>
-            <input type="password" id="password" placeholder="Password" name="password" required>
+            <input type="text" id="username" placeholder="Username" name="username" pattern="[A-Za-z0-9]{6,16}"
+                   required>
+            <input type="password" id="password" placeholder="Password" name="password"
+                   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
             <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
             <div style="display: flex;align-items: center;justify-content: space-between;">
                 <button type="submit" class="btn">Register</button>
@@ -49,12 +50,10 @@
             </div>
         </form>
     </div>
-
 </div>
 <div id="loadingOverlay" class="loading-overlay"></div>
 <div id="loadingIndicator" class="loading-indicator">
     <div class="spinner"></div>
-
 </div>
 <script src="{% static 'lending.js' %}"></script>
 <script src="{% static 'loading.js' %}"></script>

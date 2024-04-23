@@ -35,8 +35,16 @@ def lending_view(request):
 
 @login_required
 def dashboard_view(request):
-
     return render(request, "dashboard.html")
+
+
+@login_required
+def settings_view(request):
+    return render(request, "settings.html")
+
+@login_required
+def profile_view(request):
+    return render(request, "profile.html")
 
 
 def log_user_action(user, action):

@@ -25,5 +25,7 @@ urlpatterns = [
     path('registration/', registration_view, name="registration"),
     path('', first_page, name="first-page"),
     path('dashboard/', dashboard_view, name="dashboard"),
+    path('settings/', settings_view, name="settings"),
+    path('profile/', profile_view, name="profile"),
     path('logout/', logout_view, name="logout"),
 ]
