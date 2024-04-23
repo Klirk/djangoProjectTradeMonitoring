@@ -11,9 +11,9 @@ class APIWrapperDB:
             user.save()
 
             return User.objects.get(
-                username=username), "Пользователь успешно создан"  # Возвращаем флаг успеха и сообщение
+                username=username), "User successfully created"  # Возвращаем флаг успеха и сообщение
         except IntegrityError:
-            return False, "Уже есть пользователь с таким username"  # Возвращаем флаг неудачи и сообщение
+            return False, "User already exist"  # Возвращаем флаг неудачи и сообщение
 
     @staticmethod
     def check_user(username):
