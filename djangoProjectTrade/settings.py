@@ -75,12 +75,7 @@ WSGI_APPLICATION = 'djangoProjectTrade.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'tradeboard',
-        'USER': 'postgres',
-        'PASSWORD': 'rOkIHNe6Si4sP6Lv2O1',
-        'HOST': '168.119.233.168',
-        'PORT': '5432',
+       
     }
 }
 
